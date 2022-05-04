@@ -10,7 +10,9 @@ module Generamba
           'project_name' => code_module.project_name,
           'product_module_name' => code_module.product_module_name,
           'project_targets' => code_module.project_targets,
-          'test_targets' => code_module.test_targets
+          'test_targets' => code_module.test_targets,
+          'test_snapshot_testable_import' => code_module.test_snapshot_testable_import,
+          'test_unit_testable_import' => code_module.test_unit_testable_import
       }
 
       developer = {

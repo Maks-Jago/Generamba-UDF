@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'cocoapods-core', '>= 1.4.0', '< 2.0.0'
   spec.add_runtime_dependency 'terminal-table', '1.4.5'
 
-  spec.add_development_dependency 'bundler', '~> 1.10'
+  spec.add_development_dependency 'bundler', '~> 2.2.16'
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'rspec', '~> 3.4'
   spec.add_development_dependency 'fakefs', '~> 0.6.1'

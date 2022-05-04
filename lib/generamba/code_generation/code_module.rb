@@ -28,7 +28,13 @@ module Generamba
                 :podfile_path,
                 :cartfile_path,
                 :custom_parameters,
-                :create_logical_groups
+                :create_logical_groups,
+                :test_unit_target,
+                :test_unit_path,
+                :test_unit_testable_import,
+                :test_snapshot_target,
+                :test_snapshot_path,
+                :test_snapshot_testable_import
 
     def initialize(name, rambafile, options)
       # Base initialization
@@ -60,6 +66,14 @@ module Generamba
 
       @test_targets = [rambafile[TEST_TARGET_KEY]] if rambafile[TEST_TARGET_KEY]
       @test_targets = rambafile[TEST_TARGETS_KEY] if rambafile[TEST_TARGETS_KEY]
+
+      @test_unit_target = rambafile[TEST_UNIT_TARGET_KEY] if rambafile[TEST_UNIT_TARGET_KEY]
+      @test_unit_path = Pathname.new(rambafile[TEST_UNIT_PATH_KEY]).join(@name) if rambafile[TEST_UNIT_PATH_KEY]
+      @test_unit_testable_import = rambafile[TEST_UNIT_TESTABLE_IMPORT] if rambafile[TEST_UNIT_TESTABLE_IMPORT]
+
+      @test_snapshot_target = rambafile[TEST_SNAPSHOT_TARGET_KEY] if rambafile[TEST_SNAPSHOT_TARGET_KEY]
+      @test_snapshot_path = Pathname.new(rambafile[TEST_SNAPSHOT_PATH_KEY]) if rambafile[TEST_SNAPSHOT_PATH_KEY]
+      @test_snapshot_testable_import = rambafile[TEST_SNAPSHOT_TESTABLE_IMPORT] if rambafile[TEST_SNAPSHOT_TESTABLE_IMPORT]
 
       # Custom parameters
       @custom_parameters = options[:custom_parameters]

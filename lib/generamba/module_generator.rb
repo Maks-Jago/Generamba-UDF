@@ -21,6 +21,9 @@ module Generamba
                 FileUtils.mkdir_p code_module.test_file_path if code_module.test_file_path
             end
 
+			FileUtils.mkdir_p code_module.test_unit_path if code_module.test_unit_path
+			FileUtils.mkdir_p code_module.test_snapshot_path if code_module.test_snapshot_path			
+
 			# Creating code files
 			if code_module.project_targets && code_module.project_group_path && code_module.project_file_path
 				puts('Creating code files...')
@@ -34,7 +37,6 @@ module Generamba
 																code_module.project_file_root)
 			end
 
-
 			# Creating test files
 			if code_module.test_targets && code_module.test_group_path && code_module.test_file_path
 				puts('Creating test files...')
@@ -47,6 +49,34 @@ module Generamba
 																code_module.test_file_path,
 																code_module.test_file_root,
 																[code_module.project_group_path])
+			end
+
+			# Creating unit test files
+			if code_module.test_unit_target && code_module.test_unit_path && code_module.test_unit_testable_import
+				puts('Creating unit test files...')
+				process_files_if_needed(template.test_unit_files,
+																code_module,
+																template,
+																project,
+																[code_module.test_unit_target],
+																code_module.test_unit_path,
+																code_module.test_unit_path,
+																code_module.test_unit_path,
+																[code_module.test_unit_path])
+			end
+
+			# Creating snapshot test files
+			if code_module.test_snapshot_target && code_module.test_snapshot_path && code_module.test_snapshot_testable_import
+				puts('Creating snapshot test files...')
+				process_files_if_needed(template.test_snapshot_files,
+																code_module,
+																template,
+																project,
+																[code_module.test_snapshot_target],
+																code_module.test_snapshot_path,
+																code_module.test_snapshot_path,
+																code_module.test_snapshot_path,
+																[code_module.test_snapshot_path])
 			end
 
 			# Saving the current changes in the Xcode project

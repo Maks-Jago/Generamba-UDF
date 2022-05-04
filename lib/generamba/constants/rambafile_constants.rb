@@ -18,6 +18,14 @@ module Generamba
   TEST_TARGETS_KEY = 'test_targets'
   TEST_FILE_PATH_KEY = 'test_file_path'
   TEST_GROUP_PATH_KEY = 'test_group_path'
+  
+  TEST_UNIT_TARGET_KEY = 'test_unit_target'
+  TEST_UNIT_PATH_KEY = 'test_unit_path'
+  TEST_UNIT_TESTABLE_IMPORT = 'test_unit_testable_import'
+
+  TEST_SNAPSHOT_TARGET_KEY = 'test_snapshot_target'
+  TEST_SNAPSHOT_PATH_KEY = 'test_snapshot_path'
+  TEST_SNAPSHOT_TESTABLE_IMPORT = 'test_snapshot_testable_import'
 
   PODFILE_PATH_KEY = 'podfile_path'
   CARTFILE_PATH_KEY = 'cartfile_path'

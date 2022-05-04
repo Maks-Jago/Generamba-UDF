@@ -17,6 +17,13 @@ describe 'GenCommandTableParametersFormatter' do
       expected_params['Test group path'] = Pathname.new('ProjectTests/Modules/name')
       expected_params['Template'] = 'Template'
       expected_params['Custom parameters'] = {:key => 'value'}.to_json
+      expected_params['Test unit target'] = 'UnitTarget'
+      # expected_params['Test unit path'] = Pathname.new('UnitTarget/Modules')
+      expected_params['Test unit testable import'] = 'Target'
+
+      expected_params['Test snapshot target'] = 'SnapshotTarget'
+      # expected_params['Test snapshot path'] = Pathname.new('SnapshotTarget/Modules')
+      expected_params['Test snapshot testable import'] = 'Target'
 
       rambafile = {}
       rambafile[Generamba::PROJECT_NAME_KEY] = 'project'
@@ -28,6 +35,14 @@ describe 'GenCommandTableParametersFormatter' do
       rambafile[Generamba::TEST_TARGET_KEY] = 'TargetTests'
       rambafile[Generamba::TEST_FILE_PATH_KEY] = 'ProjectTests'
       rambafile[Generamba::TEST_GROUP_PATH_KEY] = 'ProjectTests/Modules'
+      
+      rambafile[Generamba::TEST_UNIT_TARGET_KEY] = 'UnitTarget'
+      # rambafile[Generamba::TEST_UNIT_PATH_KEY] = 'UnitTarget/Modules'
+      rambafile[Generamba::TEST_UNIT_TESTABLE_IMPORT] = 'Target'
+
+      rambafile[Generamba::TEST_SNAPSHOT_TARGET_KEY] = 'SnapshotTarget'
+      # rambafile[Generamba::TEST_SNAPSHOT_PATH_KEY] = 'SnapshotTarget/Modules'
+      rambafile[Generamba::TEST_SNAPSHOT_TESTABLE_IMPORT] = 'Target'
 
       options = {}
       options[:custom_parameters] = {:key => 'value'}

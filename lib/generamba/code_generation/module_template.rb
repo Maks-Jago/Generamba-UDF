@@ -4,7 +4,7 @@ module Generamba
 
   # Represents a single Generamba module template
   class ModuleTemplate
-    attr_reader :template_name, :template_path, :code_files, :test_files, :dependencies
+    attr_reader :template_name, :template_path, :code_files, :test_files, :test_unit_files, :test_snapshot_files, :dependencies
 
     def initialize(name, options = nil)
       spec_path = TemplateHelper.obtain_spec(name)
@@ -20,6 +20,9 @@ module Generamba
 
       @code_files = spec[TEMPLATE_CODE_FILES_KEY]
       @test_files = spec[TEMPLATE_TEST_FILES_KEY]
+      @test_unit_files = spec[TEMPLATE_TEST_UNIT_FILES_KEY] if spec[TEMPLATE_TEST_UNIT_FILES_KEY]
+      @test_snapshot_files = spec[TEMPLATE_TEST_SNAPSHOT_FILES_KEY] if spec[TEMPLATE_TEST_SNAPSHOT_FILES_KEY]
+
       @template_name = spec[TEMPLATE_NAME_KEY]
       @template_path = TemplateHelper.obtain_path(name)
       @dependencies = spec[TEMPLATE_DEPENDENCIES_KEY]

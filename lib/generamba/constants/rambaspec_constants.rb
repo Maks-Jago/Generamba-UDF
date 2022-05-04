@@ -9,6 +9,10 @@ module Generamba
 
   TEMPLATE_CODE_FILES_KEY = 'code_files'
   TEMPLATE_TEST_FILES_KEY = 'test_files'
+
+  TEMPLATE_TEST_UNIT_FILES_KEY = 'test_unit_files'
+  TEMPLATE_TEST_SNAPSHOT_FILES_KEY = 'test_snapshot_files'
+
   TEMPLATE_FILE_NAME_KEY = 'name'
   TEMPLATE_FILE_CUSTOM_NAME_KEY = 'custom_name'
   TEMPLATE_FILE_PATH_KEY = 'path'
