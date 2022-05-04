@@ -72,5 +72,48 @@ module Generamba::CLI
       generator.generate_module(module_name, code_module, template)
     end
 
+    desc 'udf [TEMPLATE_NAME]', 'Creates a new SwiftUI-UDF module with a given name'
+    method_option :description, :aliases => '-d', :desc => 'Provides a full description to the storage'
+    method_option :author, :desc => 'Specifies the author name for generated storage'
+    method_option :project_targets, :desc => 'Specifies project targets for adding new module files'
+    method_option :project_file_path, :desc => 'Specifies a location in the filesystem for new files'
+    method_option :project_group_path, :desc => 'Specifies a location in Xcode groups for new files'
+    method_option :module_path, :desc => 'Specifies a location (both in the filesystem and Xcode) for new files'
+    method_option :test_targets, :desc => 'Specifies project targets for adding new test files'
+    method_option :test_file_path, :desc => 'Specifies a location in the filesystem for new test files'
+    method_option :test_group_path, :desc => 'Specifies a location in Xcode groups for new test files'
+    method_option :test_path, :desc => 'Specifies a location (both in the filesystem and Xcode) for new test files'
+    method_option :test_unit_target, :desc => 'Specifies unit tests target for adding new files'
+    method_option :test_unit_path, :desc => 'Specifies a location (both in the filesystem and Xcode) for new unit test files'
+    method_option :test_unit_testable_import, :desc => 'Specifies unit tests testable import target'
+    method_option :test_snapshot_target, :desc => 'Specifies snapshot tests target for adding new files'
+    method_option :test_snapshot_path, :desc => 'Specifies a location (both in the filesystem and Xcode) for new snapshot test files'
+    method_option :test_snapshot_testable_import, :desc => 'Specifies snapshot tests testable import target'
+    method_option :custom_parameters, :type => :hash, :default => {}, :desc => 'Specifies extra parameters in format `key1:value1 key2:value2` for usage during code generation'
+    def udf(module_name)
+      gen(module_name, 'udf')
+    end
+
+    desc 'storage [TEMPLATE_NAME]', 'Creates a new SwiftUI-UDF storage with a given name'
+    method_option :description, :aliases => '-d', :desc => 'Provides a full description to the storage'
+    method_option :author, :desc => 'Specifies the author name for generated storage'
+    method_option :project_targets, :desc => 'Specifies project targets for adding new module files'
+    method_option :project_file_path, :desc => 'Specifies a location in the filesystem for new files'
+    method_option :project_group_path, :desc => 'Specifies a location in Xcode groups for new files'
+    method_option :module_path, :desc => 'Specifies a location (both in the filesystem and Xcode) for new files'
+    method_option :test_targets, :desc => 'Specifies project targets for adding new test files'
+    method_option :test_file_path, :desc => 'Specifies a location in the filesystem for new test files'
+    method_option :test_group_path, :desc => 'Specifies a location in Xcode groups for new test files'
+    method_option :test_path, :desc => 'Specifies a location (both in the filesystem and Xcode) for new test files'
+    method_option :test_unit_target, :desc => 'Specifies unit tests target for adding new files'
+    method_option :test_unit_path, :desc => 'Specifies a location (both in the filesystem and Xcode) for new unit test files'
+    method_option :test_unit_testable_import, :desc => 'Specifies unit tests testable import target'
+    method_option :test_snapshot_target, :desc => 'Specifies snapshot tests target for adding new files'
+    method_option :test_snapshot_path, :desc => 'Specifies a location (both in the filesystem and Xcode) for new snapshot test files'
+    method_option :test_snapshot_testable_import, :desc => 'Specifies snapshot tests testable import target'
+    method_option :custom_parameters, :type => :hash, :default => {}, :desc => 'Specifies extra parameters in format `key1:value1 key2:value2` for usage during code generation'
+    def storage(module_name)
+      gen(module_name, 'udf-storage')
+    end
   end
 end

@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'generamba/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'generamba'
+  spec.name          = 'generamba-udf'
   spec.version       = Generamba::VERSION
   spec.authors       = ['Egor Tolstoy', 'Andrey Zarembo', 'Beniamin Sarkisyan', 'Aleksandr Sychev']
   spec.email         = 'rambler.ios@rambler-co.ru'
